@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="./css/tailwind.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Loopstudios landing page</title>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="landing">
+    <img src="images/desktop/image-hero.jpg" alt="" class="hidden md:block aspect-auto w-full">
+    <img src="images/mobile/image-hero.jpg" alt="" class="block md:hidden aspect-auto w-full">
+    <div>
+      <div class="flex justify-between items-center">
+        <h1 class="font-alata text-3xl font-bold">loopstudios</h1>
+        <nav class="md:flex" id="navigation">
+          <div class="md:hidden flex p-8 items-center justify-between">
+            <h1 class="font-alata text-3xl font-bold">loopstudios</h1>
+            <button class="ico ico-close" onclick="removeClass('nav#navigation', 'active')"></button>
+          </div>
+          <ul class="flex gap-x-8 flex-col md:flex-row mx-10 gap-y-8 w-1/2 md:w-full mt-32 md:mt-auto">
+            <li class="nav-list main" onclick="removeClass('nav#navigation', 'active')">About</li>
+            <li class="nav-list main" onclick="removeClass('nav#navigation', 'active')">Careers</li>
+            <li class="nav-list main" onclick="removeClass('nav#navigation', 'active')">Events</li>
+            <li class="nav-list main" onclick="removeClass('nav#navigation', 'active')">Products</li>
+            <li class="nav-list main" onclick="removeClass('nav#navigation', 'active')">Support</li>
+          </ul>
+        </nav>
+        <button class="ico ico-menu place-items-center inline-grid md:hidden h-10 w-10 text-white" onclick="toggleClass('nav#navigation', 'active')"></button>
+      </div>
+      <div class="border md:w-[400px] lg:w-[550px] border-white uppercase text-5xl lg:text-7xl p-4 mt-36 font-josephin+sans ">
+        Immersive experiences that deliver
+      </div>
+    </div>
+  </div>
+  <div class="w-full section md:flex flex-col items-center justify-center xl:grid xl:grid-cols-2 xl:grid-rows-1 xl:items-end grid-rows-2 grid-cols-1">
+    <img src="images/mobile/image-interactive.jpg" class="flex flex-grow-0 lg:hidden shadow-md" alt="">
+    <img src="images/desktop/image-interactive.jpg" class="hidden flex-grow-0 lg:block shadow-md" alt="">
+    <div class="bg-white md:w-[550px] lg:w-full lg:-mx-28 lg:-mb-2 lg:p-14 mt-8 text-center lg:text-left">
+      <h1 class="uppercase font-josephin+sans text-4xl">The leader in interactive VR</h1>
+      <span class="text-sm font-alata text-dark-gray px-6">
+        Founded in 2011, Loopstudios has been producing world-class virtual reality
+        projects for some of the best companies around the globe. Our award-winning
+        creations have transformed businesses through digital experiences that bind
+        to their brand.
+      </span>
+    </div>
+  </div>
+  <div class="section w-full flex flex-col">
+    <div class="w-full flex items-center justify-between mb-10">
+      <h2 class="font-josephin+sans w-full md:w-auto text-center md:text-left text-4xl md:text-5xl uppercase">Our
+        creations</h2>
+      <button
+        class="text-center hidden md:block h-9 w-36 space-text rounded border-black hover:bg-black uppercase hover:text-white">See
+        all</button>
+    </div>
+    <div id="products"></div>
+    <button
+      class="block md:hidden w-1/2 h-10 my-10 mx-auto space-text border rounded-sm border-black hover:bg-black uppercase hover:text-white text-center">See
+      all</button>
+  </div>
+  <footer class="section mt-20 pt-10 md:px-32 bg-black text-white font-alata">
+    <div class="w-full flex mb-8 md:mb-2 items-center justify-between">
+      <h1 class="font-bold text-center w-full md:w-auto text-2xl">loopstudios</h1>
+      <div class="hidden md:flex space-x-4">
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-facebook"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-twitter"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-pintrest"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-instagram"></a>
+      </div>
+    </div>
+    <div class="flex w-full flex-col md:flex-row justify-between">
+      <ul class="flex w-full md:w-auto flex-col gap-x-6 md:flex-row items-center justify-center lg:justify-between">
+        <li class="nav-list text-center p-2 my-1 w-fit">About</li>
+        <li class="nav-list text-center p-2 my-1 w-fit">Careers</li>
+        <li class="nav-list text-center p-2 my-1 w-fit">Events</li>
+        <li class="nav-list text-center p-2 my-1 w-fit">Products</li>
+        <li class="nav-list text-center p-2 my-1 w-fit">Support</li>
+      </ul>
+      <div class="md:hidden flex mx-auto w-full items-center justify-center space-x-4 mt-10">
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-facebook"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-twitter"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-pintrest"></a>
+        <a href="" class="text-gray-200 h-9 inline-block nav-list transition-colors duration-200 hover:text-white ico ico-instagram"></a>
+      </div>
+      <span class="text-very-dark-gray w-full text-center text-sm block py-8 md:ml-auto md:w-auto">
+        © 2021 Loopstudios. All rights reserved.
+      </span>
+    </div>
+    <div class="attribution text-gray-400 py-1">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/astraldev">@astraldev</a>.
+    </div>
+  </footer>
+  <script src="./lib/anime.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/products.js"></script>
+  <script src="./js/icons.js"></script>
+</body>
+
+</html>

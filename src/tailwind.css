@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind utilities;
+@layer utilities {
+  .text-5xl{
+    font-size: 2.6rem;
+  }
+}
+@tailwind components;
+
+nav:not(.active){
+  @apply hidden md:flex;
+}
+
+nav.active{
+  @apply fixed md:relative w-full md:w-auto h-screen md:h-auto bg-black md:bg-transparent text-white inset-0 z-50;
+  animation: fade-in 100ms 0s 1 ease-in-out forwards;
+}
+
+#landing{
+  @apply w-full relative text-white;
+}
+#landing > div{
+  @apply py-8 px-5 md:py-10 md:px-40 absolute inset-0;
+}
+.nav-list{
+  @apply relative grid;
+}
+.nav-list:not(li){
+  @apply place-items-center;
+}
+li.nav-list.main{
+  @apply md:font-alata font-josephin+sans text-2xl w-fit md:w-auto uppercase md:capitalize !place-items-start md:place-items-center md:text-base;
+}
+.nav-list::after{
+  content: "";
+  @apply inset-y-0 w-0 border-b-2 border-white;
+}
+li.nav-list::after{
+  @apply mr-auto md:mx-auto;
+}
+.nav-list:not(li)::after{
+  @apply mx-auto;
+}
+.nav-list:hover::after{
+  animation: animate-nav-list 200ms 0s 1 ease-in-out forwards;
+}
+.section{
+  @apply mt-24 md:mt-44 md:px-40 px-5;
+}
+button.space-text{
+  letter-spacing: 2px;
+}
+
+#products {
+  @apply grid md:grid-cols-4 gap-10 grid-cols-1;
+}
+.card-img {
+  @apply grid place-items-end relative;
+}
+.card-img::after{
+  content: "";
+  @apply absolute inset-0 right-2/3 md:inset-x-0 md:top-2/3 blur-lg bg-black/30 z-10;
+}
+.card-img .img-sm{
+  @apply block md:hidden w-full;
+}
+.card-img .img-md{
+  @apply hidden md:block w-full;
+}
+.card-img span {
+  @apply font-josephin+sans uppercase z-20 absolute left-8 md:inset-x-8 bottom-8 text-white md:text-lg xl:text-4xl;
+}
